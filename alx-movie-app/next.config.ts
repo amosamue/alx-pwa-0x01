@@ -1,15 +1,14 @@
 import withPWAInit from "@ducanh2912/next-pwa";
-import { NextConfig } from "next";
 
-/** @type {NextConfig} */
+/** @type {import('next').NextConfig} */
 const withPWA = withPWAInit({
-  dest: "public",
+  dest: 'public', // Service worker files will be generated in the public folder
 });
 
-const nextConfig: NextConfig = {
+const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ["m.media-amazon.com"], // for movie images
+    domains: ['m.media-amazon.com'], // For movie posters
   },
 };
 
