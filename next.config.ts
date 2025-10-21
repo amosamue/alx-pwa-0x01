@@ -1,15 +1,15 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  images: {
-    remotePatterns: [
+  reactStrictMode: true,
+  async redirects() {
+    return [
       {
-        protocol: "https",
-        hostname: "m.media-amazon.com",
-        port: "",
-        pathname: "/**",
+        source: "/",          // any request to /
+        destination: "/movies", // goes to /movies
+        permanent: false,     // temporary redirect
       },
-    ],
+    ];
   },
 };
 
-module.exports = nextConfig;
+export default nextConfig;
